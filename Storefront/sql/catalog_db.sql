@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2026 at 03:41 PM
+-- Generation Time: Sep 19, 2026 at 05:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -29,7 +29,6 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
-  `user_id` int(11) DEFAULT NULL,
   `order_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` varchar(30) DEFAULT NULL,
   `total_amount` decimal(10,2) DEFAULT NULL
@@ -67,20 +66,6 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `email` varchar(150) DEFAULT NULL,
-  `passwd` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `vendors`
 --
 
@@ -99,8 +84,7 @@ CREATE TABLE `vendors` (
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `fk_order_user_id` (`user_id`);
+  ADD PRIMARY KEY (`order_id`);
 
 --
 -- Indexes for table `order_items`
@@ -116,12 +100,6 @@ ALTER TABLE `order_items`
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`),
   ADD KEY `fk_products_vendor_id` (`vendor_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `vendors`
@@ -152,12 +130,6 @@ ALTER TABLE `products`
   MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
@@ -166,12 +138,6 @@ ALTER TABLE `vendors`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `fk_order_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
 -- Constraints for table `order_items`
