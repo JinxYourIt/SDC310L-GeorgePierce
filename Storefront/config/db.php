@@ -1,12 +1,6 @@
 <?php
-$host = "localhost";
-$username = "root";
-$password = "";
-$dbname = "catalog_db";
+require_once __DIR__ . '/../models/database.php';
 
-$conn = mysqli_connect($host, $username, $password, $dbname);
-
-if (!$conn){
-    die("Datatbase connection failure: " . mysqli_connect_error());
-}
-?>
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+$conn = connect_db();
+$conn->set_charset('utf8mb4');

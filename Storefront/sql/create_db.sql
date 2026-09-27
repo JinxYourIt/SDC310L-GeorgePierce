@@ -19,27 +19,6 @@ ADD CONSTRAINT fk_products_vendor_id
 FOREIGN KEY (vendor_id) 
 REFERENCES vendors(vendor_id);
 
-CREATE TABLE IF NOT EXISTS users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    email VARCHAR(150),
-    passwd VARCHAR(255)
-);
-
-CREATE TABLE IF NOT EXISTS orders (
-	order_id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
-    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status VARCHAR(30),
-    total_amount DECIMAL(10, 2)
-);
-
-ALTER TABLE orders
-ADD CONSTRAINT fk_order_user_id
-FOREIGN KEY (user_id)
-REFERENCES users(user_id);
-
 CREATE TABLE IF NOT EXISTS order_items (
 	order_item_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
