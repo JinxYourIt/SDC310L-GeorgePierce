@@ -1,4 +1,10 @@
 <?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+
 // Run from the tests folder: php storefront_test.php
 require_once('../models/order.php');
 $conn = connect_db();

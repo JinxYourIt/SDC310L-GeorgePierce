@@ -1,4 +1,10 @@
 <?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+
 $title = 'Ol\' George\'s Market';
 require_once('../controllers/store_controller.php');
 $products = getProducts();

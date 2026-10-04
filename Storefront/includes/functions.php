@@ -1,4 +1,10 @@
 <?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+
 
 // Keep only positive product IDs and positive whole-number quantities.
 function readCart($input) {

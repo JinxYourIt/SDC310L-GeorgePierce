@@ -1,4 +1,10 @@
 <?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+
 require_once('../models/product.php');
 require_once('../models/order.php');
 require_once('../includes/functions.php');

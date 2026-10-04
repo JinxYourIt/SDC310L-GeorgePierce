@@ -1,3 +1,8 @@
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
 INSERT INTO vendors (vendor_name, contact_email, contact_phone)
 VALUES ('Hallz', 'Hallz@example.com', '123-456-7890'),
        ('MeatGrinders', 'MG@example.com', '987-654-3210'),

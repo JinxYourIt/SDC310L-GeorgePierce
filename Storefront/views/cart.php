@@ -1,4 +1,10 @@
 <?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+
 $title = 'Your Cornerstone Cart';
 require_once('../controllers/store_controller.php');
 require_once('../includes/header.php');

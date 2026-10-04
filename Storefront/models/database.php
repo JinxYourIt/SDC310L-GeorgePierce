@@ -1,4 +1,10 @@
 <?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+
 function connect_db() {
     // Reuse the connection during this request.
     static $conn = null;

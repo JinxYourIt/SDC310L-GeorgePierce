@@ -1,3 +1,10 @@
+<?php
+/*
+George Pierce
+SDC310L
+Catalog Project
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
